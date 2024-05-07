@@ -14,6 +14,7 @@ public class MelonMain {
 
         MelonCrwaling melonCrwaling = new MelonCrwaling();
 
-        melonCrwaling.top100();
+        melonCrwaling.serchTimeInfo();
+        melonCrwaling.top100Info();
     }
 }
