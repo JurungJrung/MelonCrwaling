@@ -5,7 +5,10 @@ public class Music {
     private String singer;
     private String alum;
 
-    public Music(String rank,String title,String singer,String alum){
+    public Music() {
+    }
+
+    public Music(String rank, String title, String singer, String alum){
         this.rank = rank;
         this.title = title;
         this.singer = singer;
