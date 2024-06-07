@@ -53,12 +53,14 @@ public class MelonCrawling {
 
             Music musicInfo = new Music(rank.text(),title.text(),singer.text(),albumJacketImage);
             top100.add(musicInfo);
-            Music musicTime = new Music(melonTime);
-            top100.add(musicTime);
 
             System.out.println(rank.text()+ "위 " + "제목: " + title.text() + " ,가수: " + singer.text() + "\n"+" ,앨범재킷 URL: "+albumJacketImage);
             System.out.println(melonTime);
         }
+
+        Music musicTime = new Music(melonTime);
+        top100.add(musicTime);
+
     }
     public List<Music> getTop100(){
         return top100;
