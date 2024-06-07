@@ -1,19 +1,23 @@
 public class MelonTime {
 
-    private String times;
-    private String times1;
+    private String yyyymmdd;
+    private String hhmm;
 
-    public MelonTime(String times, String times1) {
-        this.times = times;
-        this.times1 = times1;
+    public MelonTime(String yyyymmdd, String hhmm) {
+        this.yyyymmdd = yyyymmdd;
+        this.hhmm = hhmm;
+    }
+
+    public MelonTime() {
+
     }
 
 
     @Override
     public String toString() {
         return "Timer{" +
-                "time='" + times + '\'' +
-                ", times1='" + times1 + '\'' +
+                "time='" + yyyymmdd + '\'' +
+                ", times1='" + hhmm + '\'' +
                 '}';
     }
 }

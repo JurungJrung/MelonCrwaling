@@ -3,17 +3,33 @@ public class Music {
     private String rank;
     private String title;
     private String singer;
-    private String alum;
+    private String album;
+
+    public MelonTime getMelonTime() {
+        return melonTime;
+    }
+
+    public Music(MelonTime melonTime) {
+        this.melonTime = melonTime;
+    }
+
+    public void setMelonTime(MelonTime melonTime) {
+        this.melonTime = melonTime;
+    }
+
+    private MelonTime melonTime;
 
     public Music() {
     }
 
-    public Music(String rank, String title, String singer, String alum){
+    public Music(String rank, String title, String singer, String album){
         this.rank = rank;
         this.title = title;
         this.singer = singer;
-        this.alum = alum;
+        this.album = album;
     }
+
+
 
     public String getRank() {
         return rank;
@@ -39,12 +55,12 @@ public class Music {
         this.singer = singer;
     }
 
-    public String getAlum() {
-        return alum;
+    public String getAlbum() {
+        return album;
     }
 
-    public void setAlum(String alum) {
-        this.alum = alum;
+    public void setAlbum(String alum) {
+        this.album = album;
     }
 
     @Override
@@ -53,7 +69,7 @@ public class Music {
                 "rank='" + rank + '\'' +
                 ", title='" + title + '\'' +
                 ", singer='" + singer + '\'' +
-                ", alum='" + alum + '\'' +
+                ", alum='" + album + '\'' +
                 '}';
     }
 
