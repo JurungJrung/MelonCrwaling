@@ -1,3 +1,5 @@
+package melon;
+
 public class MelonTime {
 
     private String yyyymmdd;

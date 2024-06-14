@@ -1,9 +1,15 @@
+package melon;
+
 public class Music {
 
     private String rank;
     private String title;
     private String singer;
     private String album;
+
+    public Music(String text) {
+    }
+
 
     public MelonTime getMelonTime() {
         return melonTime;
@@ -19,8 +25,6 @@ public class Music {
 
     private MelonTime melonTime;
 
-    public Music() {
-    }
 
     public Music(String rank, String title, String singer, String album){
         this.rank = rank;
@@ -29,7 +33,10 @@ public class Music {
         this.album = album;
     }
 
-
+    public Music() {
+        this.title = title;
+        this.singer = singer;
+    }
 
     public String getRank() {
         return rank;
@@ -65,7 +72,7 @@ public class Music {
 
     @Override
     public String toString() {
-        return "Music{" +
+        return "melon.Music{" +
                 "rank='" + rank + '\'' +
                 ", title='" + title + '\'' +
                 ", singer='" + singer + '\'' +

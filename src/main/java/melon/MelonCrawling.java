@@ -1,12 +1,10 @@
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+package melon;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,12 +15,13 @@ public class MelonCrawling {
     private String URL = "https://www.melon.com/chart/index.htm"; // URL : 크롤링 하고자 하는 사이트 주소를 변수로 만들어 코드 축약
     private Document melonTopList;
     private List<Music> top100;
-//    private List<MelonTime> timeInfo;
+    private List<Music> youtubeTiles;
 
     public MelonCrawling() throws IOException {
         melonTopList = Jsoup.connect(URL).get();
         top100 = new ArrayList<>();
-        top100Info();
+        youtubeTiles = new ArrayList<>();
+//        top100Info();
     }
 
 
@@ -56,6 +55,9 @@ public class MelonCrawling {
 
             System.out.println(rank.text()+ "위 " + "제목: " + title.text() + " ,가수: " + singer.text() + "\n"+" ,앨범재킷 URL: "+albumJacketImage);
             System.out.println(melonTime);
+
+            Music youtube = new Music(title.text());
+            youtubeTiles.add(youtube);
         }
 
         Music musicTime = new Music(melonTime);
@@ -65,5 +67,10 @@ public class MelonCrawling {
     public List<Music> getTop100(){
         return top100;
     }
+
+    public List<Music> getYoutubeTiles(){
+        return youtubeTiles;
+    }
+
 }
 
